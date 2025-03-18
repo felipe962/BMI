@@ -11,6 +11,17 @@
     <string name="cauculate">Cauculate</string>
     <string name="weight">Weight</string>
     <string name="height">Height</string>
+    <string name="result">Your BMI RESULT</string>
+    <string name="you_have_class_i_obseity"> you have class i obseity</string>
+    <string name="resultado"> result </string>
+    <string name="ag_e"> age </string>
+    <string name="imc"> 30,6 </string>
+    <string name="idade"> 50 </string>
+    <string name="wheigt"> weight </string>
+    <string name="hheigh"> heigh </string>
+    <string name="kg"> 97kg </string>
+    <string name="high"> 178cm </string>
+    <string name="novo"> new calc </string>
 </resources>
 
 
