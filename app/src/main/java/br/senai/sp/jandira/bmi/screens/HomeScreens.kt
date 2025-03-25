@@ -35,10 +35,11 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import br.senai.sp.jandira.bmi.R
 
 @Composable
-fun HomeScreens(modifier: Modifier = Modifier) {
+fun HomeScreens(controleDeNavegacao: NavHostController?) {
 
     var nomeState = remember {
         mutableStateOf(value = "")
@@ -54,7 +55,7 @@ fun HomeScreens(modifier: Modifier = Modifier) {
 
                 )
             ))
-    ){
+    )   {
         Column (
             modifier = Modifier
                 .fillMaxSize(),
@@ -73,7 +74,7 @@ fun HomeScreens(modifier: Modifier = Modifier) {
                 color = Color.White,
                 modifier = Modifier
                     .padding(bottom = 60.dp)
-        )
+        )}
 
          Card (
              modifier = Modifier
@@ -134,11 +135,10 @@ fun HomeScreens(modifier: Modifier = Modifier) {
                     )
                 )
                 Button(
-                    onClick = {},
-                    shape = RoundedCornerShape(10.dp),
-                    modifier = Modifier
-                        .padding(top = 260.dp)
-                        .padding(start = 250.dp)
+                    onClick = {
+                        controleDeNavegacao?.navigate("user_data")
+                    },
+                    shape = RoundedCornerShape(10.dp)
                 ){
                     Text(text = stringResource(R.string.next))
                     Icon(imageVector = Icons.Filled.ArrowForward,
@@ -150,7 +150,6 @@ fun HomeScreens(modifier: Modifier = Modifier) {
          }
         }
     }
-}
 
 fun Icon(ImageVector: ImageVector, contentDescription: String, tint: Color) {
 
@@ -159,5 +158,5 @@ fun Icon(ImageVector: ImageVector, contentDescription: String, tint: Color) {
 @Preview(showSystemUi = true)
 @Composable
 private fun HomeScreensPrieview() {
-    HomeScreens()
+    HomeScreens(null)
 }
